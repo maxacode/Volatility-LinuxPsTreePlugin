@@ -33,14 +33,14 @@ for index in range(len(allprocs)):
                 # Printing process's and reseting endSpace to default.
                 print("SECOND" + spaces[0:endSpace] + "|__" + str(allprocs[index2]))
 
-                index3 = compPIDPPID()
-                if allprocs[index3][2] == allprocs[index2][1]:
-                    print("Third" + spaces[0:endSpace] + "|" + spaces[0:endSpace] + "|__" + str(allprocs[index3]))
+                in
+                    if allprocs[index3][2] == allprocs[index2][1]:
+                        print("Third" + spaces[0:endSpace] + "|" + spaces[0:endSpace] + "|__" + str(allprocs[index3]))
 
-                    for index4 in range(len(allprocs)):
-                        if allprocs[index4][2] == allprocs[index3][1]:
-                            print("Fourth" + spaces[0:endSpace] + "|" + spaces[0:endSpace] + "|" + spaces[0:endSpace] + "|__" + str(
-                                allprocs[index4]))
+                        for index4 in range(len(allprocs)):
+                            if allprocs[index4][2] == allprocs[index3][1]:
+                                print("Fourth" + spaces[0:endSpace] + "|" + spaces[0:endSpace] + "|" + spaces[0:endSpace] + "|__" + str(
+                                    allprocs[index4]))
 
             #
 
