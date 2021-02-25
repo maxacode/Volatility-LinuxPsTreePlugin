@@ -14,31 +14,42 @@ subProc3 = []
 spaces = "                                                                                                                                                 "
 
 #Padding for 1st sub process
-endSpace = 29
+endSpace = 28
 
 #Starting loop for all process
 for index in range(len(allprocs)):
+    endSpace = 29
     #Checking if this process has been shown on the screen already - that way a sub process doesnt appear as a main process
     first = 0
     if first == 0 and allprocs[index] not in subProc:
-        print(str(allprocs[index]) + dashes[len((str(allprocs[index][0]))) +len((str(allprocs[index][2]))) + len((str(allprocs[index][2]))):18] + "-|")
-        first = 1
+        print("FRIST" + str(allprocs[index]) + dashes[len((str(allprocs[index][0]))) +len((str(allprocs[index][2]))) + len((str(allprocs[index][2]))):18] + "-|")
+
 
     #Second loop to compare the PPID and PID of 2 process.
-    for index2 in range(1,len(allprocs)):
-        #Adding proccess to a list to know it fwas already printed.
-        if allprocs[index][1] == allprocs[index2][2]:
-            subProc.append(allprocs[index2])
-            #If proccess already seen then will padd it more.
-            if allprocs[index] in subProc:
-                endSpace = 50
-                subProc2.append(allprocs[index2])
-                if allprocs[index] in subProc2:
-                    endSpace = 70
-                subProc3.append(allprocs[index2])
-                if allprocs[index] in subProc3:
-                    endSpace = 90
+        for index2 in range(len(allprocs)):
+            #Adding proccess to a list to know it fwas already printed.
+            if allprocs[index][1] == allprocs[index2][2]:
+                subProc.append(allprocs[index2])
+                # Printing process's and reseting endSpace to default.
+                print("SECOND" + spaces[0:endSpace] + "|__" + str(allprocs[index2]))
 
-            #Printing process's and reseting endSpace to default.
-            print(spaces[0:endSpace] + "|__" + str(allprocs[index2]))
-            endSpace = 28
+                index3 = compPIDPPID()
+                if allprocs[index3][2] == allprocs[index2][1]:
+                    print("Third" + spaces[0:endSpace] + "|" + spaces[0:endSpace] + "|__" + str(allprocs[index3]))
+
+                    for index4 in range(len(allprocs)):
+                        if allprocs[index4][2] == allprocs[index3][1]:
+                            print("Fourth" + spaces[0:endSpace] + "|" + spaces[0:endSpace] + "|" + spaces[0:endSpace] + "|__" + str(
+                                allprocs[index4]))
+
+            #
+
+                # #If proccess already seen then will padd it more.
+            if allprocs[index] in subProc:
+                continue
+
+
+def compPIDPPID():
+    for index in range(len(allprocs)):
+        if allprocs[index+1][2] == allprocs[index][1]:
+            print("????" + spaces[0:endSpace] + "|__" + str(allprocs[index]))
